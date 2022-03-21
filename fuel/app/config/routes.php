@@ -18,7 +18,8 @@ return array(
 	 *
 	 */
 
-	'_root_' => 'welcome/index',
+	'_root_' => 'm1/index',
+	'about' => 'm1/about',
 
 	/**
 	 * -------------------------------------------------------------------------
@@ -28,7 +29,6 @@ return array(
 	 */
 
 	'_404_' => 'welcome/404',
-
 	/**
 	 * -------------------------------------------------------------------------
 	 *  Example for Presenter
@@ -39,4 +39,5 @@ return array(
 	 */
 
 	'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
+	
 );
