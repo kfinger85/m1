@@ -20,7 +20,7 @@
     </div>
     </nav>
     <button id='closesidebar' onclick="toogleNav()">&#x2630</button>
-    <div class="w3-teal" id='main'>
+    <div id='main'>
     <body>
     <?php echo $content ?>
     </div>

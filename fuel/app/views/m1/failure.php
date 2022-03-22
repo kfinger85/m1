@@ -1,7 +1,7 @@
 <div id="alert" onload="myFunction()">
     Invaild number!
 </div>
-<script>
+<script defer>
     document.onload = function(){
         // Get the snackbar DIV
         var x = document.getElementById("alert");

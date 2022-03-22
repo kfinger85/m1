@@ -7,7 +7,7 @@ Class Controller_Color extends Controller_Template
         $this->template->js = "sidebar.js";
 		$this->template->title = 'Color'; 
 		$this->template->content = (View::forge('m1/color'));
-        $this->template->content->set("table","table.css");
+        $this->template->content->set("main","main.css");
         $this->template->content->set( 'display', 'none'  );
 
     }
@@ -17,7 +17,7 @@ Class Controller_Color extends Controller_Template
         $this->template->js = "sidebar.js";
 		$this->template->title = 'Color'; 
 		$this->template->content = (View::forge('m1/color'));
-        $this->template->content->set("table","table.css");
+        $this->template->content->set("main","main.css");
         $this->template->content->set( 'display', 'none'  );
 
     }
@@ -27,17 +27,16 @@ Class Controller_Color extends Controller_Template
         $numOfRows = Input::post('numOfRows');
         $numOfColors = Input::post('numOfColors');         
     
-        if ($numOfColors <= 10 && ($numOfRows <= 26 && $numOfColunms <= 26))
+        if ($numOfColors <= 10 && $numOfColors > 0 && ($numOfRows <= 26 && $numOfColunms <= 26))
         {   
             $this->template->css = "sidebar.css"; 
             $this->template->js = "sidebar.js";
             $this->template->title = 'Color Table'; 
             $this->template->content = (View::forge('m1/success'));
-            $this->template->content->set('columns', $numOfColunms);
-            $this->template->content->set('columns', $numOfColunms);
-            $this->template->content->set('rows', $numOfRows);
-            $this->template->content->set('colors', $numOfColors);
-            $this->template->content->set("table","table.css");
+            $this->template->content->set('numOfColunms', $numOfColunms);
+            $this->template->content->set('numOfRows', $numOfRows);
+            $this->template->content->set('numOfColors', $numOfColors);
+            $this->template->content->set("main","main.css");
             $this->template->content->set("printcss","print.css"); 
             $this->template->content->set("dropdown","dropdown.js");
             $this->template->content->set( 'display', 'none'  );
@@ -47,7 +46,7 @@ Class Controller_Color extends Controller_Template
             $this->template->js = "sidebar.js";
             $this->template->title = 'Color'; 
             $this->template->content = (View::forge('m1/color'));
-            $this->template->content->set("table","table.css");
+            $this->template->content->set("main","main.css");
             $this->template->content->failure = (View::forge('m1/failure'));
             $this->template->content->set('display', 'inline');
         }
