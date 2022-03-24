@@ -1,0 +1,13 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "https://www.cs.colostate.edu:4444/~kfinger/m1/index/color",
+            "request": "launch",
+            "url": "https://www.cs.colostate.edu:4444/~kfinger/m1/index/color"
+        }
+    ]
+}
