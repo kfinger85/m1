@@ -1,10 +1,11 @@
 <?php 
-    echo Asset::css($main);  
     echo Asset::js($dropdown); 
     echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">';       
-    //seperate css file for print mode
+    // seperate css file for print mode
     echo '<link type="text/css" media="print" rel="stylesheet" href="https://www.cs.colostate.edu:4444/~kfinger/m1/assets/css/print.css">'
 ?>
+<?php echo Asset::img(("logothin.png"), array("width"=>"120" ,"height" =>"40", "id"=>"printlogo")); ?>   
+
 <div class="wrapper">
 <div id="alert" >
     No duplicate colors!

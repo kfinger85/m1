@@ -6,7 +6,7 @@ Class Controller_M1 extends Controller_Template
 	 */
 	public function action_index()
 	{
-        $this->template->css = "sidebar.css"; 
+        $this->template->css = "main.css"; 
         $this->template->js = "sidebar.js";
 		$this->template->title = 'Home Page'; 
 		$this->template->content = (View::forge('m1/index'));
@@ -14,7 +14,7 @@ Class Controller_M1 extends Controller_Template
 
     public function action_about()
 	{
-        $this->template->css = "sidebar.css"; 
+        $this->template->css = "main.css"; 
         $this->template->js = "sidebar.js";
 		$this->template->title = 'About Us'; 
 		$this->template->content = (View::forge('m1/about'));
