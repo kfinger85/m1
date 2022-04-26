@@ -16,43 +16,53 @@ $colors = ['','red', 'orange', 'yellow', 'green', 'blue', 'purple', 'grey',
 'brown', 'black', 'teal']; 
     for($rows = 0; $rows < $numOfColors; $rows++ )
     {
-        echo '<tr id="tablerow">';
+        echo "<tr id='row${rows}'>";
         for($cols=0; $cols < 2; $cols++)
         {
             if($cols == 0){
-            echo "<td id='col${cols}'> 
-            <select name='colors${cols}' id='color_${rows}'>";
+            echo "<td id='col${cols}'>";
+            if($rows == 0){
+            echo "<input type='radio' id='radio${rows}' name='color_picker' checked>"; 
+            }else{
+                echo "<input type='radio' id='radio${rows}' name='color_picker'>"; 
+
+            }
+            echo "<select name='colors${cols}' id='color_${rows}'>";
 
             foreach ($colors as $color){
                 echo "<option value='${color}'>${color}</option>"; 
             }        
                 echo "</select> </td>";             
         }else
-            echo "<td id='col${cols}'> ? </td>";   
+            echo "<td id='row${rows}'></td>";   
         }
         echo '</tr>';
 
     }
 echo '</table>';
 echo '<table id="bottomtable">'; 
-$aph = 'A'; 
+$headerAph = 'A'; 
 $nums = 1;  
     for($rows = 0; $rows < $numOfRows+1; $rows++ )
     {
+        $aph = 'A'; 
+
         echo '<tr id="tablerow">';
         for($cols=0; $cols < $numOfColunms+1; $cols++)
         {
+
             if($rows == 0 && $cols == 0){
                 echo "<td id='bcol'></td>"; 
             }elseif($cols == 0){
-                echo "<td id='bcol'> ${nums}</td>";
+                echo "<td id=brow${nums}'> ${nums}</td>";
                 ++$nums;
             }elseif($rows ==  0){
-                    echo "<td id='bcol'> ${aph}</td>";
-                    ++$aph; 
+                    echo "<td id=${headerAph}> ${headerAph}</td>";
+                    ++$headerAph; 
                 }
             else{
-                echo "<td id='bcol'></td>";
+                echo "<td id=${aph}${rows}></td>";
+                ++$aph; 
                 }
         }  
         echo '</tr>';
