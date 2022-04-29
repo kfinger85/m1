@@ -1,4 +1,5 @@
 <?php
+use \Model\ColorModel;
 Class Controller_M1 extends Controller_Template
 {
 	/*
@@ -10,6 +11,7 @@ Class Controller_M1 extends Controller_Template
         $this->template->js = "sidebar.js";
 		$this->template->title = 'Home Page'; 
 		$this->template->content = (View::forge('m1/index'));
+
     }
 
     public function action_about()
