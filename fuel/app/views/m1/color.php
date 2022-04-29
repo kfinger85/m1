@@ -4,7 +4,6 @@
     echo $failure ;
 }
 $total = ($totalColors[0]['count(ID)']); 
-echo "<h1></h1>";
 // Form for user input, Using Fuel's Form class
 echo Form::open(array(
         "action" => "index/color",
@@ -17,3 +16,6 @@ echo Form::open(array(
     echo '<br><br>' . Form::submit(); 
     echo Form::close();
     ?>
+<button id='addColor' onclick='location.href="https://www.cs.colostate.edu:4444/~kfinger/m1/index/usercolor"' type='button'><rows class="fa fa-print"></rows>
+Add a Color
+</button>

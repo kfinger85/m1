@@ -5,14 +5,38 @@
     echo '<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />';
     echo Asset::js($colorpickerjs); 
     echo Asset::css($colorpickercss); 
+    echo '
+<script>
+$(window).load(function()
+{
+    let alert = document.getElementById("alert");
+    alert.className = "show";
+    setTimeout(function(){ alert.className = alert.className.replace("show", ""); }, 3000);    
+});
 
-    echo '<script>
-                $(document).ready(function() {
-                    $(function() {
-                        $("#my_color_picker").colorpicker();
-                    });
-                });
-   </script>'; 
+$(document).ready(function() {
+    $(function() {
+        $("#my_color_picker").colorpicker();
+    });
+});
+</script>
+';
+
+if(isset($failure))
+{
+    
+echo '
+<div id="alert" >
+    Duplicate color name, try again
+</div>';
+
+}elseif(isset($success))
+{
+    echo '
+<div id="alert" >
+    Color added!
+</div>';
+}
     echo Form::open(array(
         "action" => "index/usercolor",
         "method" => "post",
