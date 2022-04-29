@@ -22,12 +22,19 @@ $(document).ready(function() {
 </script>
 ';
 
-if(isset($failure))
-{
+if(isset($failureDuplicate)){
     
 echo '
 <div id="alert" >
     Duplicate color name, try again
+</div>';
+
+
+}elseif(isset($failureNameLen)){
+
+    echo '
+<div id="alert" >
+    Name to long, try again
 </div>';
 
 }elseif(isset($success))
@@ -42,8 +49,8 @@ echo '
         "method" => "post",
         "id" => "color_form"
     ));
-    echo '<label>Color Picker: </label>'. Form::input('hexValue','', array('id' => 'my_color_picker','type' => 'text' , 'max' => '26', 'required' => 'required')); 
-    echo '<br><br><label>Number of Color: </label>'. Form::input('colorName','', array('type' => 'text', 'max' => '26', 'required' => 'required')); 
+    echo '<label>Color Picker: </label>'. Form::input('hexValue','', array('id' => 'my_color_picker','type' => 'text' , 'maxlength' => '30', 'required' => 'required' , 'placeholder' => 'click here')); 
+    echo '<br><br><label>Name of Color: </label>'. Form::input('colorName','', array('type' => 'text', 'maxlength' => '30', 'required' => 'required')); 
     echo '<br><br>' . Form::submit(); 
     echo Form::close();
 
