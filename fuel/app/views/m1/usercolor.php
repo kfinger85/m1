@@ -37,8 +37,7 @@ echo '
     Name to long, try again
 </div>';
 
-}elseif(isset($success))
-{
+}elseif(isset($success)){
     echo '
 <div id="alert" >
     Color added!
@@ -49,7 +48,7 @@ echo '
         "method" => "post",
         "id" => "color_form"
     ));
-    echo '<label>Color Picker: </label>'. Form::input('hexValue','', array('id' => 'my_color_picker','type' => 'text' , 'maxlength' => '30', 'required' => 'required' , 'placeholder' => 'click here')); 
+    echo '<label>Color Picker: </label>'. Form::input('hexValue','', array('id' => 'my_color_picker','type' => 'text' , 'maxlength' => '30', 'required' => 'required' , 'placeholder' => 'click here' ,"autocomplete" => "off")); 
     echo '<br><br><label>Name of Color: </label>'. Form::input('colorName','', array('type' => 'text', 'maxlength' => '30', 'required' => 'required')); 
     echo '<br><br>' . Form::submit(); 
     echo Form::close();

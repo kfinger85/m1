@@ -2,8 +2,6 @@
 use \Model\ColorModel;
 Class Controller_UserColor extends Controller_Template
 {
-
-
     public function action_index()
 	{
         $this->template->css = "main.css"; 

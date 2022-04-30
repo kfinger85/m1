@@ -12,7 +12,7 @@ echo Form::open(array(
     ));
     echo '<label>Number of Columns: </label>'. Form::input('numOfColunms','', array('type' => 'number' , 'max' => '26', 'required' => 'required')); 
     echo '<br><br><label>Number of Rows: </label>'. Form::input('numOfRows','', array('type' => 'number', 'max' => '26', 'required' => 'required')); 
-    echo '<br><br><label>Number of Colors: </label>'. Form::input('numOfColors','', array('type' => 'number', 'max' => $total, 'required' => 'required')); 
+    echo '<br><br><label>Number of Colors: </label>'. Form::input('numOfColors','', array('type' => 'number', 'max' => $total-1, 'required' => 'required')); 
     echo '<br><br>' . Form::submit(); 
     echo Form::close();
     ?>

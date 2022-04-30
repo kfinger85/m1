@@ -1,6 +1,8 @@
 <?php 
     echo Asset::js($dropdown); 
     // seperate css file for print mode
+    echo '<link type="text/css" media="print" rel="stylesheet" href="https://www.cs.colostate.edu:4444/~kfinger/m1/assets/css/print.css">';
+    // image for print 
     echo Asset::img(("logothin.png"), array("width"=>"120" ,"height" =>"40", "id"=>"printlogo")); 
     ?>   
 
@@ -91,6 +93,9 @@ $nums = 1;
     }
 echo '</table>';
 ?>
-<button id='print' onclick="window.print();"><rows class="fa fa-print"></rows>
+<button id='print' onclick="window.print();">
 Print Me
+</button>
+<button id='clear'>
+Clear
 </button>

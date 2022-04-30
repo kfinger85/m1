@@ -12,27 +12,22 @@ Class Controller_Color extends Controller_Template
 		$this->template->title = 'Color'; 
         $totalColors = ColorModel::get_total();   
         $colorArray = ColorModel::get_namesArray();
-        Debug::dump($colorArray[0]['Name']);   
-        Debug::dump($colorArray[0]['HexValue']);   
 		$this->template->content = (View::forge('m1/color'));
         $this->template->content->set('totalColors', $totalColors);
-        
-
-
     }
-    // Post function when form data valid 
     public function post_index() {
+        $this->template->css = "main.css"; 
+        $this->template->js = "sidebar.js";
+        $totalColors = ColorModel::get_total();  
+        $colorArray = ColorModel::get_namesArray(); 
         $numOfColunms = Input::post('numOfColunms');    
         $numOfRows = Input::post('numOfRows');
-        $numOfColors = Input::post('numOfColors');
-        $totalColors = ColorModel::get_total();  
-        $colorArray = ColorModel::get_namesArray();     
+        $numOfColors = Input::post('numOfColors') + 1;
   
-    
+            // Post function when form data valid 
         if (($numOfColors <= $totalColors && $numOfColors > 0) && ($numOfRows > 0 && $numOfRows <= 26)  && ($numOfColunms > 0 && $numOfColunms <= 26))
-        {   
-            $this->template->css = "main.css"; 
-            $this->template->js = "sidebar.js";
+        {
+
             $this->template->title = 'Color Table'; 
             $this->template->content = (View::forge('m1/success'));
             $this->template->content->set('numOfColunms', $numOfColunms);
@@ -43,8 +38,6 @@ Class Controller_Color extends Controller_Template
             $this->template->content->set("dropdown","dropdown.js");
         }else
         {
-            $this->template->css = "main.css";           
-            $this->template->js = "sidebar.js";
             $this->template->title = 'Color'; 
             $this->template->content = (View::forge('m1/color'));
             $this->template->content->set("main","main.css");
