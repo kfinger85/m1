@@ -1,3 +1,4 @@
+<?php echo Asset::img(("logolarge.png"), array("id"=>"backgroundlogo")); ?> 
 <main class="member-body">
     <div class="member-one">
         <h2>Mike Sequino</h2>
@@ -9,7 +10,10 @@
         <?php echo Asset::img(("apappas.png"), array("width"=>"120" , "id"=>"apappaspic")); ?> 
         <p>Colorado native and Applied Computing Technologies major</p>
     </div>
-   <div class="member-three">
+    <div class="member-three">
+        <h2>Fores Yousifauni</h2>
+    </div>
+   <div class="member-four">
         <h2>Kevin Finger</h2>
         <?php echo Asset::img(("kfinger.png"), array("width"=>"120" , "id"=>"kfingerpic")); ?>   
         <p> Kevin's current role is a Computer Science Major at Colorado State University. 
@@ -17,4 +21,5 @@
         <br> His Biggest Professional Achievement: managing a Music Production company 
         <br> His Biggest Personal Achievement: Feeding Foster Kangaroos in Tazmania!</p>
     </div>
+
 </main>

@@ -14,7 +14,7 @@ class ColorModel extends \Model {
     }
     public static function get_total()
     {
-        return DB::query('SELECT count(ID) FROM colors', DB::SELECT)->execute()->as_array(); 
+        return DB::query('SELECT count(ID) AS total FROM colors', DB::SELECT)->execute()->as_array(); 
     }
     public static function get_namesArray()
     {

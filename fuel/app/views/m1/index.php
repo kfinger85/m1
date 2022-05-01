@@ -1,6 +1,4 @@
-<?php echo Asset::img(("logolarge.png"), array("width"=>"400" ,"height" =>"750", "id"=>"headerlogo")); 
-
-?> 
+<?php echo Asset::img(("logolarge.png"), array("id"=>"backgroundlogo"));?> 
 
 <div id="welcomeContent">
     <h1>Welcome to the Fakecorp!</h1>

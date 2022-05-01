@@ -2,7 +2,6 @@
 /*
  * Controller for Color Page
 */
-
 use \Model\ColorModel;
 Class Controller_Color extends Controller_Template
 {
@@ -20,17 +19,17 @@ Class Controller_Color extends Controller_Template
         $this->template->js = "sidebar.js";
         $totalColors = ColorModel::get_total();  
         $colorArray = ColorModel::get_namesArray(); 
-        $numOfColunms = Input::post('numOfColunms');    
+        $numOfColumns = Input::post('numOfColumns');    
         $numOfRows = Input::post('numOfRows');
         $numOfColors = Input::post('numOfColors') + 1;
   
             // Post function when form data valid 
-        if (($numOfColors <= $totalColors && $numOfColors > 0) && ($numOfRows > 0 && $numOfRows <= 26)  && ($numOfColunms > 0 && $numOfColunms <= 26))
+        if (($numOfColors <= $totalColors && $numOfColors > 0) && ($numOfRows > 0 && $numOfRows <= 26)  && ($numOfColumns > 0 && $numOfColumns <= 26))
         {
 
             $this->template->title = 'Color Table'; 
             $this->template->content = (View::forge('m1/success'));
-            $this->template->content->set('numOfColunms', $numOfColunms);
+            $this->template->content->set('numOfColunms', $numOfColumns);
             $this->template->content->set('numOfRows', $numOfRows);
             $this->template->content->set('numOfColors', $numOfColors);
             $this->template->content->set("colorArray", $colorArray);
