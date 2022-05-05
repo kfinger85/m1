@@ -10,7 +10,7 @@ Class Controller_Color extends Controller_Template
         $this->template->js = "sidebar.js";
 		$this->template->title = 'Color'; 
         $totalColors = ColorModel::get_total();   
-        $colorArray = ColorModel::get_namesArray();
+        $colorArray = ColorModel::get_Table();
 		$this->template->content = (View::forge('m1/color'));
         $this->template->content->set('totalColors', $totalColors);
     }
@@ -18,10 +18,10 @@ Class Controller_Color extends Controller_Template
         $this->template->css = "main.css"; 
         $this->template->js = "sidebar.js";
         $totalColors = ColorModel::get_total();  
-        $colorArray = ColorModel::get_namesArray(); 
+        $colorArray = ColorModel::get_Table(); 
         $numOfColumns = Input::post('numOfColumns');    
         $numOfRows = Input::post('numOfRows');
-        $numOfColors = Input::post('numOfColors') + 1;
+        $numOfColors = Input::post('numOfColors');
   
             // Post function when form data valid 
         if (($numOfColors <= $totalColors && $numOfColors > 0) && ($numOfRows > 0 && $numOfRows <= 26)  && ($numOfColumns > 0 && $numOfColumns <= 26))

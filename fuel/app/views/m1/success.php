@@ -16,7 +16,7 @@
 $colors = array(""); 
 $hexVal = array(""); 
 
-for($i=1; $i < $numOfColors; ++$i)
+for($i=0; $i < $numOfColors; ++$i)
 {
 
     array_push($colors , ($colorArray[$i]['Name'])); 
@@ -25,7 +25,7 @@ for($i=1; $i < $numOfColors; ++$i)
 }
 echo '<style>';
 // Dynamic css, to add background-colors to bottomtable and coordinate strings to uppertable
-for ($i=1; $i < $numOfColors; $i++) { 
+for ($i=0; $i < count($colors); $i++) { 
     $color = $colors[$i]; 
     $hex = $hexVal[$i];
     echo ".$color { background-color: #$hex } \n";  

@@ -7,10 +7,11 @@ Class Controller_UserColor extends Controller_Template
         $this->template->css = "main.css"; 
         $this->template->js = "sidebar.js";
 		$this->template->title = 'Color Maker'; 
-        $totalColors = ColorModel::get_namesArray();
+        $colorsTable = ColorModel::get_Table();
         $this->template->content = (View::forge('m1/usercolor'));
         $this->template->content->set("colorpickercss","jquery.colorpicker.css");
-        $this->template->content->set("colorpickerjs","jquery.colorpicker.js"); 
+        $this->template->content->set("colorpickerjs","jquery.colorpicker.js");
+        $this->template->content->set("ajax","ajax.js");
 
     }
 	public function post_index()
@@ -18,9 +19,11 @@ Class Controller_UserColor extends Controller_Template
         $this->template->css = "main.css";           
         $this->template->js = "sidebar.js";
         $this->template->title = 'Color Maker';
+        $colorsArray = ColorModel::get_Table(); 
         $this->template->content = (View::forge('m1/usercolor'));
         $this->template->content->set("colorpickercss","jquery.colorpicker.css");
         $this->template->content->set("colorpickerjs","jquery.colorpicker.js");
+        $this->template->content->set("ajax","ajax.js");
         $colorName = Input::post('colorName');
         if(strlen($colorName) > 20)
         {
