@@ -12,6 +12,8 @@
     </div>
     <div class="member-three">
         <h2>Fores Yousifauni</h2>
+        <?php echo Asset::img(("fyousifauni.png"), array("width"=>"120" , "id"=>"fyousifaunipic")); ?> 
+        <p>Senior at Colorado State University studying Computer Science with a concentration in Networks and Security.</p>
     </div>
    <div class="member-four">
         <h2>Kevin Finger</h2>
